@@ -493,6 +493,14 @@ var marshalTests = []struct {
 			},
 		},
 		"value: !!seq []\n",
+	}, {
+		yaml.Node{
+			Kind:  yaml.ScalarNode,
+			Style: yaml.FoldedStyle,
+			Value: "foo\n  bar",
+			Tag:   "!!str",
+		},
+		">-\n    foo\n      bar",
 	},
 }
 
